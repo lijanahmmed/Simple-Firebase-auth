@@ -25,7 +25,6 @@ function App() {
   const handleGithubSignIn = () => {
     signInWithPopup(auth, gitHubProvider)
       .then(result => {
-        console.log(result.user);
         const loggedInUser = result.user;
 
         if (!loggedInUser.email) {
