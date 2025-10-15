@@ -22,27 +22,7 @@ function App() {
       })
   }
 
-  const handleGithubSignIn = () => {
-    signInWithPopup(auth, gitHubProvider)
-      .then(result => {
-        const loggedInUser = result.user;
-
-        if (!loggedInUser.email) {
-          if (loggedInUser.providerData) {
-            const gitProvider = loggedInUser
-              .providerData.find(p => p.providerId === 'github.com');
-            if (gitProvider && gitProvider.email) {
-              loggedInUser.email = gitProvider.email;
-            }
-          }
-        }
-
-        setUser(result.user);
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }
+  
 
   const handleSignOut = () => {
     signOut(auth)
@@ -68,7 +48,7 @@ function App() {
           <button onClick={handleSignOut}>SignOut</button> :
           <>
             <button onClick={handleGoogleSignIn}>Sign In With Google</button>
-            <button onClick={handleGithubSignIn}>Sign In with GitHub</button>
+            
           </>
       }
 
