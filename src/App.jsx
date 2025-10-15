@@ -59,17 +59,15 @@ function App() {
     <>
 
       <h1>Simple Dimple Auth</h1>
-      {/* <button onClick={handleGoogleSignIn}>Sign In With Google</button>
-      <button onClick={handleSignOut}>SignOut</button> */}
 
       {
         user
           ?
           <button onClick={handleSignOut}>SignOut</button> :
-          <>
+          <div>
             <button onClick={handleGoogleSignIn}>Sign In With Google</button>
             <button onClick={handleGithubSignIn}>Sign In with GitHub</button>
-          </>
+          </div>
       }
 
       {user && <div>
